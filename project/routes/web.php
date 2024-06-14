@@ -22,3 +22,7 @@ Route::get('/register', function () {
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 // Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+
+Route::get('/deposit', function () {
+    return view('deposit');
+});
