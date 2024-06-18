@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\TransferController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,3 +19,7 @@ Route::get('/register', function () {
     return view('register');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/transfer', [TransferController::class, 'showTransferForm'])->name('transfer.form');
+    Route::post('/transfer', [TransferController::class, 'processTransfer'])->name('transfer.process');
+});
