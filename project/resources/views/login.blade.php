@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full bg-white">
 <head>
     <meta charset="UTF-8">
     @vite('resources/css/app.css')
     <title>Login</title>
 </head>
-<body>
+<body class="h-full">
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
 <div class="sm:mx-auto sm:w-full sm:max-w-sm">
     <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Login to your account</h2>
@@ -40,6 +40,7 @@
     <p class="mt-10 text-center text-sm text-gray-500">
     Didn't have account?
     <a href="/register" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Register</a>
+
     </p>
 </div>
 </div>
