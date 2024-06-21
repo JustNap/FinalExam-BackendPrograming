@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-    public function showRegistrationForm()
-    {
-        return view('auth.register');
-    }
-
     public function register(Request $request)
     {
         $request->validate([
@@ -29,5 +24,9 @@ class RegisterController extends Controller
         ]);
 
         return redirect()->route('login')->with('success', 'Account created successfully. Please login.');
+    }
+    public function showRegistrationForm()
+    {
+        return view('register'); // Asumsi view form registrasi berada di resources/views/auth/register.blade.php
     }
 }

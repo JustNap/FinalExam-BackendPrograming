@@ -21,7 +21,7 @@ Route::get('/register', function () {
 });
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
+Route::post('/register', [RegisterController::class, 'register'])->name('register.store');
 
 
 Route::middleware(['auth'])->group(function () {
