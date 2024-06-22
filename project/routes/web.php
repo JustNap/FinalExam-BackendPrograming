@@ -25,10 +25,6 @@ Route::get('/check-balance-view', function () {
     return view('check_balance');
 });
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/check-balance', [BalanceController::class, 'checkBalance']);
-});
-
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register'])->name('register.store');
 
