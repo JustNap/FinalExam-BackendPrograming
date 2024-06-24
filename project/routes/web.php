@@ -36,5 +36,5 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/homepage', function () {
     return view('HomePage');
-})->middleware(['auth'])->name('homepage');
+})->name('homepage');
 
