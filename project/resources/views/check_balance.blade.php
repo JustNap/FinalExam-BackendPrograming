@@ -1,5 +1,3 @@
-//tampilan untuk melihat saldo
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

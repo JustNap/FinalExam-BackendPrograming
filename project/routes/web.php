@@ -20,13 +20,10 @@ Route::get('/tentang', function () {
 });
 
 
-Route::get('/check-balance-view', function () {
+Route::get('/check-balance', [BalanceController::class, 'checkBalance'])->name('check-balance');
+Route::get('/check-balance-page', function () {
     return view('check_balance');
-});
-
-Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register']);
-
+})->name('check-balance-page');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/transfer', [TransferController::class, 'showTransferForm'])->name('transfer.form');
@@ -34,7 +31,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/check-balance', [BalanceController::class, 'checkBalance'])->name('check.balance');
 });
 
-Route::get('/homepage', function () {
-    return view('HomePage');
-})->middleware(['auth'])->name('homepage');
-
+Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [RegisterController::class, 'register']);
+Route::get('homepage', function () {
+    return view('homepage');
+})->name('homepage');
