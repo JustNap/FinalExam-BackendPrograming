@@ -3,22 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Transaction;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class TransferController extends Controller
 {
-    public function showTransferForm()
-    {
-        return view('transfer');
-    }
-
-    public function processTransfer(Request $request)
+    public function process(Request $request)
     {
         $request->validate([
-            'to_account' => 'required|exists:users,email',
+            'to_account' => 'required|email',
             'amount' => 'required|numeric|min:1',
         ]);
 
@@ -43,7 +34,6 @@ class TransferController extends Controller
                 'amount' => $amount,
             ]);
         });
-
         return redirect()->back()->with('success', 'Transfer successful!');
     }
 }

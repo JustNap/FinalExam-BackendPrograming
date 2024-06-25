@@ -29,7 +29,12 @@
 
         <div class="form-group">
             <label for="amount">Amount</label>
-            <input type="number" name="amount" id="amount" class="form-control" required min="1">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                </div>
+                <input type="number" name="amount" id="amount" class="form-control form-control-sm" style="width: 100px; height: 40px;" required min="1">
+            </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Transfer</button>

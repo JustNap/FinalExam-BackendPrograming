@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami</title>
+    <title>About Us</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-4xl font-bold text-center mb-6">About</h1>
-        <p class="text-lg text-gray-900 leading-relaxed text-justify">
-        <strong>Definisi</strong>
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed text-justify mt-4">
-        Internet banking adalah layanan melakukan transaksi perbankan melalui jaringan internet. Merupakan kegiatan perbankan yang memanfaatkan teknologi internet sebagai media untuk melakukan transaksi dan mendapatkan informasi lainnya melalui website milik bank. Kegiatan ini menggunakan jaringan internet sebagai perantara atau penghubung antara nasabah dengan bank tanpa harus mendatangi kantor bank. Nasabah dapat menggunakan perangkat komputer desktop, laptop, tablet, atau smartphone yang terhubung ke jaringan internet sebagai penghubung antara perangkat nasabah dengan sistem bank.
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed text-justify mt-4">
-        <strong>Fitur</strong>
-        </p>
-        <p class="text-lg text-gray-700 leading-relaxed text-justify mt-4">
-        Fitur layanan internet banking antara lain informasi umum rekening, transfer antar rekening, cek saldo, dan cek mutasi.
-        </p>
+<body>
+    <div class="container">
+        <h1 class="text-center">About Us</h1>
+        <p class="text-center">This is the About Us page of our Internet Banking application. Here you can find more information about our services and mission.</p>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
