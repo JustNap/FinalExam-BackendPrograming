@@ -27,9 +27,19 @@ class LoginController extends Controller
             return redirect()->intended('/homepage');
         }
 
+        if (Auth::attempt($request->only('email', 'password'))) {
+            $request->session()->regenerate();
+    
+            $bankAccountNumber = Auth::user()->bank_account_number;
+    
+            return redirect()->intended('/homepage')->with('bankAccountNumber', $bankAccountNumber);
+        }
+
         throw ValidationException::withMessages([
             'email' => __('auth.failed'),
         ]);
+
+
     }
 
     public function logout(Request $request)
