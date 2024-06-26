@@ -11,7 +11,9 @@ class BalanceController extends Controller
     public function checkBalance()
     {
         $user = Auth::user();
-        $balance = $user->balance->balance ?? 0;
+        
+        // Mengambil saldo dari relasi Balance jika ada, atau defaultkan ke 0 jika tidak ada
+        $balance = optional($user->balance)->balance ?? 0;
 
         return response()->json([
             'status' => 'success',

@@ -10,7 +10,9 @@ class Transaction extends Model
     use HasFactory;
 
     protected $fillable = [
-        'from_user_id', 'to_user_id', 'amount',
+        'from_user_id',
+        'to_user_id',
+        'amount',
     ];
 
     public function fromUser()
