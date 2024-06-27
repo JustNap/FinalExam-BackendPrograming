@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TransferController;
+use App\Http\Controllers\Auth\TransferController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\Auth\LoginController;
@@ -31,7 +31,6 @@ Route::get('/check-balance-page', function () {
 Route::get('/transfer', function () {
     return view('transfer');
 })->name('transfer-funds');
-
 Route::post('/transfer/process', [TransferController::class, 'process'])->name('transfer.process');
 
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
