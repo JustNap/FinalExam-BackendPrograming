@@ -7,6 +7,7 @@ use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\TransactionController;
 
+use App\Http\Controllers\UserController;
 
 
 Route::get('/', function () {
@@ -41,3 +42,4 @@ Route::get('homepage', function () {
 
 Route::get('/transaction-history', [TransactionController::class, 'index'])->name('transaction-history');
 Route::get('/download-transaction-history', [TransactionController::class, 'download'])->name('download-transaction-history');
+Route::post('/users/create', [UserController::class, 'create']);

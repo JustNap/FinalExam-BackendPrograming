@@ -18,7 +18,8 @@ class RegisterController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        $bankAccountNumber = Str::random(8);
+        $randomDigits = str_pad(random_int(0, 99999), 6, '0', STR_PAD_LEFT);  
+        $bankAccountNumber = '202' . $randomDigits;
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
