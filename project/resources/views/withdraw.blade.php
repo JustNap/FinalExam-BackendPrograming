@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setoran</title>
+    <title>Withdraw</title>
 </head>
 <body>
 @extends('layouts.app')
@@ -11,7 +11,7 @@
 @section('content')
     <div class="container">
         <h1 class="text-center">Tarikan</h1>
-        <form action="{{ route('withdraw.process') }}" method="POST">
+        <form action="{{ route('withdraw') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="amount">Jumlah Tarikan:</label>

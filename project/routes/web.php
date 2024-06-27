@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\DepositController;
+use App\Http\Controllers\Auth\WithdrawController;
 
 
 use App\Http\Controllers\UserController;
@@ -33,6 +34,11 @@ Route::get('/deposit', function () {
     return view('deposit');
 })->name('deposit');
 Route::post('/deposit', [DepositController::class, 'deposit'])->name('deposit');
+
+Route::get('/withdraw', function () {
+    return view('withdraw');
+})->name('withdraw');
+Route::post('/withdraw', [WithdrawController::class, 'withdraw'])->name('withdraw');
 
 
 Route::get('/transfer', function () {
