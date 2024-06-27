@@ -34,18 +34,18 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Setoran</h5>
-                        <p class="card-text">Lakukan setoran ke akun Anda.</p>
-                        <a href="{{ route('deposit') }}" class="btn btn-primary">Setoran</a>
+                        <h5 class="card-title">Deposit</h5>
+                        <p class="card-text">Deposit your money here.</p>
+                        <a href="{{ route('deposit') }}" class="btn btn-primary">Deposit</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body text-center">
-                        <h5 class="card-title">tarikan</h5>
-                        <p class="card-text">Lakukan tarikan ke akun Anda.</p>
-                        <a href="{{ route('withdraw') }}" class="btn btn-primary">Setoran</a>
+                        <h5 class="card-title">Withdraw</h5>
+                        <p class="card-text">Withdraw your money here.</p>
+                        <a href="{{ route('withdraw') }}" class="btn btn-primary">Withdraw</a>
                     </div>
                 </div>
             </div>
@@ -58,15 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Transaction History</h5>
-                        <p class="card-text">View and download your transaction history.</p>
-                        <a href="{{ route('transaction-history') }}" class="btn btn-primary">View History</a>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 @endsection

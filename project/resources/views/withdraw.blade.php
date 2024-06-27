@@ -7,7 +7,21 @@
 </head>
 <body>
 @extends('layouts.app')
+@if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 @section('content')
     <div class="container">
         <h1 class="text-center">Tarikan</h1>
