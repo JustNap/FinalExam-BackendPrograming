@@ -5,7 +5,8 @@ use App\Http\Controllers\Auth\TransferController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\Auth\DepositController;
+
 
 use App\Http\Controllers\UserController;
 
@@ -27,6 +28,12 @@ Route::get('/check-balance', [BalanceController::class, 'checkBalance'])->name('
 Route::get('/check-balance-page', function () {
     return view('check_balance');
 })->name('check-balance-page');
+
+Route::get('/deposit', function () {
+    return view('deposit');
+})->name('deposit');
+Route::post('/deposit', [DepositController::class, 'deposit'])->name('deposit');
+
 
 Route::get('/transfer', function () {
     return view('transfer');

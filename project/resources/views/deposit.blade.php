@@ -11,7 +11,7 @@
 @section('content')
     <div class="container">
         <h1 class="text-center">Setoran</h1>
-        <form action="{{ route('deposit.process') }}" method="POST">
+        <form action="{{ route('deposit') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="amount">Jumlah Setoran:</label>

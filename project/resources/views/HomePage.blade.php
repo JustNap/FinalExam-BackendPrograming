@@ -43,15 +43,6 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Tarikan</h5>
-                        <p class="card-text">Tarik dana dari akun Anda.</p>
-                        <a href="{{ route('withdraw') }}" class="btn btn-primary">Tarikan</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body text-center">
                         <h5 class="card-title">Transfer Funds</h5>
                         <p class="card-text">Transfer money between your accounts or to others.</p>
                         <a href="{{ route('transfer-funds') }}" class="btn btn-primary">Transfer Funds</a>
