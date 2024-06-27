@@ -2,21 +2,54 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use App\Models\Transaction;
+use Illuminate\Http\Request;
+use Auth;
 
 class TransactionController extends Controller
 {
-    public function index()
+
+    public function showDepositForm()
     {
-        $transactions = Transaction::all();
-        return view('transaction.history', compact('transactions'));
+        return view('deposit');
+    }
+
+    public function processDeposit(Request $request)
+    {
+        $request->validate([
+            'amount' => 'required|numeric|min:0',
+        ]);
+
+        Auth::user()->balance += $request->balance;
+        Auth::user()->save();
+
+        return redirect()->route('homepage')->with('success', 'Setoran berhasil dilakukan.');
+    }
+
+    public function showWithdrawForm()
+    {
+        return view('withdraw');
+    }
+
+
+    public function processWithdraw(Request $request)
+    {
+        $request->validate([
+            'amount' => 'required|numeric|min:0',
+        ]);
+
+        if (Auth::user()->balance >= $request->amount) {
+            Auth::user()->balance -= $request->amount;
+            Auth::user()->save();
+
+            return redirect()->route('homepage')->with('success', 'Tarikan berhasil dilakukan.');
+        } else {
+            return redirect()->back()->with('error', 'Saldo tidak mencukupi untuk melakukan tarikan.');
+        }
     }
     public function download()
     {
 
     }
 }
+
