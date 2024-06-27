@@ -51,7 +51,3 @@ Route::post('register', [RegisterController::class, 'register']);
 Route::get('homepage', function () {
     return view('homepage');
 })->name('homepage');
-
-Route::get('/transaction-history', [TransactionController::class, 'index'])->name('transaction-history');
-Route::get('/download-transaction-history', [TransactionController::class, 'download'])->name('download-transaction-history');
-Route::post('/users/create', [UserController::class, 'create']);
