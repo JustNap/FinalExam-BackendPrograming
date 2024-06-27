@@ -43,3 +43,12 @@ Route::get('homepage', function () {
 Route::get('/transaction-history', [TransactionController::class, 'index'])->name('transaction-history');
 Route::get('/download-transaction-history', [TransactionController::class, 'download'])->name('download-transaction-history');
 Route::post('/users/create', [UserController::class, 'create']);
+
+Route::get('/deposit', [TransactionController::class, 'showDepositForm'])->name('deposit');
+Route::post('/deposit/process', [TransactionController::class, 'processDeposit'])->name('deposit.process');
+Route::get('deposit', function () {
+    return view('/deposit');
+});
+
+Route::get('/withdraw', [TransactionController::class, 'showWithdrawForm'])->name('withdraw');
+Route::post('/withdraw/process', [TransactionController::class, 'processWithdraw'])->name('withdraw.process');
